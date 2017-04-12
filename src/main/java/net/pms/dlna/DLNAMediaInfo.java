@@ -1575,8 +1575,10 @@ public class DLNAMediaInfo implements Cloneable {
 					mimeType = HTTPResource.AUDIO_WAV_TYPEMIME;
 				} else if (codecA.contains("aac")) {
 					mimeType = HTTPResource.AUDIO_AAC_TYPEMIME;
-				} else if (codecA.contains("als") || codecA.contains("alac")) {
+				} else if (codecA.contains("alac")) {
 					mimeType = HTTPResource.AUDIO_M4A_TYPEMIME;
+				} else if (codecA.contains("als")) {
+					mimeType = HTTPResource.AUDIO_ALS_TYPEMIME;
 				} else if (codecA.equals(FormatConfiguration.TRUEHD)) {
 					mimeType = HTTPResource.AUDIO_TRUEHD_TYPEMIME;
 				} else if (codecA.equals(FormatConfiguration.DTS)) {
