@@ -11,7 +11,7 @@ Checkstyle configuration that checks the sun coding conventions.
 -->
 <module name="Checker">
   <property name="severity" value="warning"/>
-  <property name="fileExtensions" value="java, properties, xml"/>
+  <property name="fileExtensions" value="java, xml"/>
   <module name="TreeWalker">
     <module name="RegexpSinglelineJava">
       <property name="format" value="^\t*(?! \*) "/>
@@ -118,7 +118,6 @@ Checkstyle configuration that checks the sun coding conventions.
     <module name="InterfaceIsType"/>
     <module name="VisibilityModifier">
       <property name="protectedAllowed" value="true"/>
-      <property name="allowPublicFinalFields" value="true"/>
       <property name="allowPublicImmutableFields" value="true"/>
     </module>
     <module name="ArrayTypeStyle"/>
