@@ -148,7 +148,7 @@
 		</dependency>
 		<dependency>
 			<groupId>commons-httpclient</groupId>
-			<artifactId>commons-httpclient</artifactId>
+			<artifactId>commons-httpclient</artifactId> <!-- TODO this should be changed to org.apache.httpcomponents which is the follower. -->
 			<version>3.1</version>
 			<exclusions>
 				<!--  no need for commons-logging, as jcl-over-slf4j provides the impl -->
