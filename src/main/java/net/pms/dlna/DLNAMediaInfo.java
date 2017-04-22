@@ -1510,8 +1510,8 @@ public class DLNAMediaInfo implements Cloneable {
 				case FormatConfiguration.WMA:
 					mimeType = HTTPResource.AUDIO_WMA_TYPEMIME;
 					break;
-				case FormatConfiguration.OGG:
-					mimeType = HTTPResource.AUDIO_OGG_TYPEMIME;
+				case FormatConfiguration.OGA:
+					mimeType = HTTPResource.AUDIO_OGA_TYPEMIME;
 					break;
 				case FormatConfiguration.AU:
 					mimeType = HTTPResource.AUDIO_AU_TYPEMIME;
@@ -1548,7 +1548,7 @@ public class DLNAMediaInfo implements Cloneable {
 				}
 			} else if (codecV == null && codecA != null) {
 				if ("ogg".equals(container)) {
-					mimeType = HTTPResource.AUDIO_OGG_TYPEMIME;
+					mimeType = HTTPResource.AUDIO_OGA_TYPEMIME;
 				} else if ("3gp".equals(container)) {
 					mimeType = HTTPResource.AUDIO_THREEGPPA_TYPEMIME;
 				} else if ("3g2".equals(container)) {
@@ -1578,7 +1578,7 @@ public class DLNAMediaInfo implements Cloneable {
 				} else if (codecA.contains("alac")) {
 					mimeType = HTTPResource.AUDIO_M4A_TYPEMIME;
 				} else if (codecA.contains("als")) {
-					mimeType = HTTPResource.AUDIO_ALS_TYPEMIME;
+					mimeType = HTTPResource.AUDIO_AAC_TYPEMIME;
 				} else if (codecA.equals(FormatConfiguration.TRUEHD)) {
 					mimeType = HTTPResource.AUDIO_TRUEHD_TYPEMIME;
 				} else if (codecA.equals(FormatConfiguration.DTS)) {

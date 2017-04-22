@@ -984,4 +984,15 @@ public class FormatConfigurationRegressionTest0 {
 
   }
 
+  @Test
+  public void test86() throws Throwable {
+
+    if (debug) { System.out.format("%n%s%n","RegressionTest0.test82"); }
+
+    java.lang.String str0 = net.pms.configuration.FormatConfiguration.OGA;
+
+    // Regression assertion (captures the current behavior of the code)
+    org.junit.Assert.assertTrue("'" + str0 + "' != '" + "oga"+ "'", str0.equals("oga"));
+  }
+
 }

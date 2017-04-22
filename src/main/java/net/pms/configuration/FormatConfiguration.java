@@ -96,6 +96,7 @@ public class FormatConfiguration {
 	public static final String MPEG2 = "mpeg2";
 	public static final String MPEGPS = "mpegps";
 	public static final String MPEGTS = "mpegts";
+	public static final String OGA = "oga";
 	public static final String OGG = "ogg";
 	public static final String OPUS = "opus";
 	public static final String PCX = "pcx";

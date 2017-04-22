@@ -251,7 +251,7 @@ public class DLNAMediaAudio extends DLNAMediaLang implements Cloneable {
 	 * @return True if the audio codec is FLAC.
 	 */
 	public boolean isFLAC() {
-		return getCodecA() != null && getCodecA().startsWith("fla");
+		return FormatConfiguration.FLAC.equalsIgnoreCase(getCodecA());
 	}
 
 	/**
@@ -308,6 +308,13 @@ public class DLNAMediaAudio extends DLNAMediaLang implements Cloneable {
 	 */
 	public boolean isPCM() {
 		return FormatConfiguration.LPCM.equals(getCodecA()) || getCodecA() != null && getCodecA().startsWith("pcm");
+	}
+
+	/**
+	 * @return True if the audio codec is OGA.
+	 */
+	public boolean isOGA() {
+		return FormatConfiguration.OGA.equalsIgnoreCase(getCodecA());
 	}
 
 	/**
