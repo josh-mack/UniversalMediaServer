@@ -400,6 +400,7 @@ public class FormatConfiguration {
 			if (
 				renderer.isUseMediaInfo() &&
 				ext.getIdentifier() != Identifier.ADPCM &&
+				ext.getIdentifier() != Identifier.ADTS &&
 				ext.getIdentifier() != Identifier.DSD &&
 				ext.getIdentifier() != Identifier.PNM
 			) {

@@ -127,14 +127,13 @@ public class DLNAMediaInfo implements Cloneable {
 	 */
 	@Deprecated
 	public String frameRate;
-
-	private String frameRateMode;
+	private String frameRateOriginal;
 
 	/**
 	 * The frame rate mode as read from the parser
 	 */
 	private String frameRateModeRaw;
-	private String frameRateOriginal;
+	private String frameRateMode;
 
 	/**
 	 * @deprecated Use standard getter and setter to access this variable.
@@ -874,6 +873,8 @@ public class DLNAMediaInfo implements Cloneable {
 							audio.setCodecA(FormatConfiguration.ADPCM);
 						} else if (ext.getIdentifier() == Identifier.DSD) {
 							audio.setCodecA(FormatConfiguration.DSDAudio);
+						} else if (ext.getIdentifier() == Identifier.ADTS) {
+							audio.setCodecA(FormatConfiguration.ADTS);
 						}
 					}
 
@@ -1573,12 +1574,10 @@ public class DLNAMediaInfo implements Cloneable {
 					mimeType = HTTPResource.AUDIO_WMA_TYPEMIME;
 				} else if (codecA.contains("pcm") || codecA.contains("wav") || codecA.contains("dts")) {
 					mimeType = HTTPResource.AUDIO_WAV_TYPEMIME;
-				} else if (codecA.contains("aac")) {
+				} else if (codecA.contains("aac") || codecA.contains("als")) {
 					mimeType = HTTPResource.AUDIO_AAC_TYPEMIME;
 				} else if (codecA.contains("alac")) {
 					mimeType = HTTPResource.AUDIO_M4A_TYPEMIME;
-				} else if (codecA.contains("als")) {
-					mimeType = HTTPResource.AUDIO_AAC_TYPEMIME;
 				} else if (codecA.equals(FormatConfiguration.TRUEHD)) {
 					mimeType = HTTPResource.AUDIO_TRUEHD_TYPEMIME;
 				} else if (codecA.equals(FormatConfiguration.DTS)) {
@@ -2151,6 +2150,7 @@ public class DLNAMediaInfo implements Cloneable {
 
 	/**
 	 * @return the frameRateOriginal
+	 * @since 6.6.0
 	 */
 	public String getFrameRateOriginal() {
 		return frameRateOriginal;
@@ -2158,6 +2158,7 @@ public class DLNAMediaInfo implements Cloneable {
 
 	/**
 	 * @param frameRateOriginal the frameRateOriginal to set
+	 * @since 6.6.0
 	 */
 	public void setFrameRateOriginal(String frameRateOriginal) {
 		this.frameRateOriginal = frameRateOriginal;
@@ -2181,6 +2182,7 @@ public class DLNAMediaInfo implements Cloneable {
 
 	/**
 	 * @return The unaltered frame rate mode
+	 * @since 6.6.0
 	 */
 	public String getFrameRateModeRaw() {
 		return frameRateModeRaw;
@@ -2188,6 +2190,7 @@ public class DLNAMediaInfo implements Cloneable {
 
 	/**
 	 * @param frameRateModeRaw the unaltered frame rate mode to set
+	 * @since 6.6.0
 	 */
 	public void setFrameRateModeRaw(String frameRateModeRaw) {
 		this.frameRateModeRaw = frameRateModeRaw;

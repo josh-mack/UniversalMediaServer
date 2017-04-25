@@ -2284,11 +2284,11 @@ public abstract class DLNAResource extends HTTPResource implements Cloneable, Ru
 				} else if (mime.substring(0, 9).equals(AUDIO_LPCM_TYPEMIME)) {
 					dlnaOrgPnFlags = "DLNA.ORG_PN=LPCM";
 				} else if (mime.equals(AUDIO_ADTS_TYPEMIME)) {
-					dlnaOrgPnFlags = "DLNA.ORG_PN=HEAAC_MULT5_ADTS";
+					dlnaOrgPnFlags = "DLNA.ORG_PN=AAC_ADTS_320";
 				} else if (mime.equals(AUDIO_M4A_TYPEMIME)) {
-					dlnaOrgPnFlags = "DLNA.ORG_PN=HEAAC_MULT5_ISO";
+					dlnaOrgPnFlags = "DLNA.ORG_PN=AAC_ISO_320";
 				} else if (mime.equals(AUDIO_THREEGPPA_TYPEMIME) || mime.equals(AUDIO_THREEGPP2A_TYPEMIME)) {
-					dlnaOrgPnFlags = "DLNA.ORG_PN=HEAAC_MULT5_ISO";
+					dlnaOrgPnFlags = "DLNA.ORG_PN=AAC_ISO_320";
 				} else if (getMediaAudio() != null && getMediaAudio().getAudioCodec().equalsIgnoreCase("als")) {
 					dlnaOrgPnFlags = "DLNA.ORG_PN=ALS_MULT5_ISO";
 				} else if (getMediaAudio() != null && getMediaAudio().getAudioCodec().equalsIgnoreCase(FormatConfiguration.WMA)) {
@@ -2548,7 +2548,7 @@ public abstract class DLNAResource extends HTTPResource implements Cloneable, Ru
 								}
 								if (firstAudioTrack.getBitsperSample() != 0) {
 									addAttribute(sb, "bitsPerSample", firstAudioTrack.getBitsperSample());
-								} else {
+								} else if (FormatConfiguration.ADTS.equals(media.getContainer()) || media.getMimeType().equals(AUDIO_LPCM_TYPEMIME)) {
 									addAttribute(sb, "bitsPerSample", 16);
 								}
 								if (firstAudioTrack.getAudioProperties().getNumberOfChannels() > 0) {

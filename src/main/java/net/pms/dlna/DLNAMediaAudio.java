@@ -178,6 +178,13 @@ public class DLNAMediaAudio extends DLNAMediaLang implements Cloneable {
 	}
 
 	/**
+	 * @return True if the audio codec is ADTS.
+	 */
+	public boolean isADTS() {
+		return FormatConfiguration.ADTS.equalsIgnoreCase(getCodecA());
+	}
+
+	/**
 	 * @return True if the audio codec is AIFF.
 	 */
 	public boolean isAIFF() {

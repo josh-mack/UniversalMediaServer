@@ -1,9 +1,8 @@
 /*
- * Universal Media Server, for streaming any medias to DLNA
- * compatible renderers based on the http://www.ps3mediaserver.org.
- * Copyright (C) 2012 UMS developers.
+ * PS3 Media Server, for streaming any media to your PS3.
+ * Copyright (C) 2008  A.Brochard
  *
- * This program is a free software; you can redistribute it and/or
+ * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
  * as published by the Free Software Foundation; version 2
  * of the License only.
@@ -19,13 +18,13 @@
  */
 package net.pms.formats.audio;
 
-public class ADTS extends AudioBase {
+public class LPCM extends AudioBase {
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
 	public Identifier getIdentifier() {
-		return Identifier.ADTS;
+		return Identifier.LPCM;
 	}
 
 	/**
@@ -34,8 +33,9 @@ public class ADTS extends AudioBase {
 	@Override
 	public String[] getSupportedExtensions() {
 		return new String[] {
-			"aac",
-			"adts"
-		};
+    "l16",
+    "lpcm",
+    "sw"
+    };
 	}
 }
